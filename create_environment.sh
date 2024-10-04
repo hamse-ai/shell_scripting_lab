@@ -22,7 +22,7 @@ echo "Assignment: \$ASSIGNMENT"
 echo "Days remaining to submit: \$DAYS_REMAINING days"
 echo "--------------------------------------------"
 
-check_submissions $submissions_file
+check_submissions \$submissions_file
 EOF
 )
 
@@ -31,7 +31,7 @@ functions=$(cat <<EOF
 
 # Function to read submissions file and output students who have not submitted
 function check_submissions {
-    local submissions_file=$1
+    local submissions_file=\$1
     echo "Checking submissions in \$submissions_file"
 
     # Skip the header and iterate through the lines
